@@ -1,0 +1,681 @@
+Tree
+Concepts & Definitions
+GRAPH
+1. Graph
+A graph G consist of a nonempty set V called the set of nodes (points, vertices) of the graph, a
+set E which is the set of edges and a mapping from the set of edges E to a set of pairs of
+elements of V.
+It is also convenient to write a graph as G=(V,E).
+Notice that definition of graph implies that to every edge of a graph G, we can associate a pair
+of nodes of the graph. If an edge X Є E is thus associated with a pair of nodes (u,v) where u, v
+Є V then we says that edge x connect u and v.
+2. Adjacent Nodes
+Any two nodes which are connected by an edge in a graph are called adjacent node.
+3. Directed and Undirected Edge
+In a graph G=(V,E) an edge which is directed from one end to another end is called a directed
+edge, while the edge which has no specific direction is called undirected edge.
+4. Directed Graph (Digraph)
+A graph in which every edge is directed is called directed graph or digraph.
+Directed Graph Undirected Graph Mixed Graph
+Figure 1
+5. Undirected Graph
+A graph in which every edge is undirected is called undirected graph.
+6. Mixed Graph
+If some of the edges are directed and some are undirected in graph then the graph is called
+mixed graph.
+7. Loop
+An edge of a graph which joins a node
+to itself is called a loop (sling). The
+direction of a loop is of no significance,
+so it can be considered either directed or
+undirected. E.g. An edge 2 from node 2
+to itself.
+8. Distinct Edges
+In the case of directed edges, the two
+possible edges between a pair of nodes
+which are opposite in direction are
+considered distinct. E.g. edges 1 & 2
+between nodes 2 & 3 in Figure 2.
+9. Parallel Edges
+In some directed as well as undirected
+graphs, we may have certain pairs of
+nodes joined by more than one edges,
+such edges are called Parallel edges.
+E.g. edges 1 & 2 between nodes 2 & 3
+in Figure 2.
+10. Multigraph
+Any graph which contains some parallel
+edges is called multigraph. E.g. graph in
+Figure 2
+11. Simple Graph
+If there is no more than one edge between a pair of nodes (no more than one directed edge in
+the case of a directed graph), then such a graph is called a simple graph.
+12. Weighted Graph
+A graph in which weights are assigned to every edge is called weighted graph.
+13. Isolated Node
+In a graph, a node which is not adjacent to any other node is called isolated node.
+14. Null Graph
+A graph containing only isolated nodes are called null graph. In other words set of edges in
+null graph is empty.
+15. Path of Graph
+Let G=(V, E) be a simple digraph such that the terminal node of any edge in the sequence is
+the initial node of the edge, if any appearing next in the sequence defined as path of the graph.
+16. Length of Path
+The number of edges appearing in the sequence of the path is called length of path.
+17. Degree of vertex
+The no of edges which have V as their terminal node is call as indegree of node V The no of
+edges which have V as their initial node is call as outdegree of node V
+Sum of indegree and outdegree of node V is called its Total Degree or Degree of vertex.
+18. Simple Path (Edge Simple)
+A path in a diagraph in which the edges are distinct is called simple path or edge simple. E.g.
+path P5 and P6 in Figure 3.
+19. Elementary Path (Node Simple)
+A path in which all the nodes through which it traverses are distinct is called elementary path.
+E.g. paths P1, P2, P3 and P4 in figure 3 are elementary paths. Path P5 & P6 are simple but not
+elementary.
+20. Cycle (Circuit)
+A path which originates and ends in the same node is called cycle (circuit). E.g. C1 = ((2,2)),
+C2 = ((1,2),(2,1)), C3 = ((2,3),(3,1),(1,2)).
+21. Acyclic Digraph
+A simple digraph which does not have any cycle is called acyclic digraph.
+TREE
+1. Directed Tree
+A directed tree is an acyclic digraph
+which has one node called its root with
+in degree 0, while all other nodes have
+in degree 1.
+Every directed tree must have at least
+one node. An isolated node is also a
+directed tree.
+2. Terminal Node (Leaf Node)
+In a directed tree, any node which has
+out degree 0 is called terminal node or
+leaf node. All other nodes are called
+branch nodes.
+Figure 4
+3. Level of Node
+The level of any node is the length of its path from the root.
+4. Ordered Tree
+In a directed tree an ordering of the nodes at each level is prescribed then such a tree is called
+ordered tree.
+The diagram below represents same directed tree but different ordered trees.
+Figure 5
+5. Forest
+If we delete the root and its edges connecting the nodes at level 1, we obtain a set of disjoint
+tree. A set of disjoint tree is a forest.
+6. Mary Tree
+If in a directed tree the out degree of every node is less than or equal to m then tree is called an
+mary tree.
+7. Complete Mary Tree
+If the out degree of each and every node is exactly equal to m or 0 and the number of nodes at
+level i is mi then the tree is called a complete mary tree.
+8. Positional Mary Tree
+If we consider mary trees in which the m children of any node are assumed to have m distinct
+positions, if such positions are taken into account, then tree is called positional m ary tree.
+9. Height of the tree
+The height of a tree is the length of the path from the root to the deepest node in the tree.
+10. Sibling
+Siblings are nodes that share the same parent node.
+11. Binary tree (Figure 6(a))
+If in a directed tree the out degree of every node is less than or equal to 2 then tree is called
+binary tree.
+12. Strictly binary tree (Figure 6(b))
+A strictly binary tree (sometimes proper binary tree or 2tree) is a tree in which every node other
+than the leaves has two children.
+13. Complete binary tree (Figure 6(c))
+If the out degree of each and every node is exactly equal to 2 or 0 and the number of nodes at
+level i is 2i then the tree is called a complete binary tree.
+14. Almost Complete binary tree (Figure 6(d))
+A Binary Tree of depth d is Almost Complete iff:
+1. The tree is Complete Binary Tree (All nodes) till level (d-1).
+2. At level d, (i.e the last level), if a Node is present, then all the Nodes to the left of that node
+should also be present.
+(a) Binary Tree (b) Strictly
+Binary Tree
+(c) Complete Binary
+Tree
+(d) Almost
+Complete
+Binary Tree
+Figure 6
+Representation of Directed Tree
+A. Venn Diagram
+Figure 7.1
+B. Nesting of Parenthesis
+Figure 7.2
+C. Like Table of Content for a book
+Figure 7.3
+D. Level-Number Format
+Figure 7.4
+Binary Tree Traversals (Inorder, Preorder and Postorder)
+The most common operation performed on tree structure is that of traversal. This is a procedure by
+which each node in the tree is processed exactly once in a systematic manner.
+Unlike linear data structures (Array, Linked List, Queues, Stacks, etc) which have only one logical way
+to traverse them, trees can be traversed in different ways. Following are the generally used ways for
+traversing trees.
+There are three ways of traversing a binary tree.
+1. Preorder Traversal
+2. Inorder Traversal
+3. Postorder Traversal
+Preorder: Preorder traversal of a binary tree is defined as follow
+ Process the root node
+ Traverse the left subtree in preorder
+ Traverse the right subtree in preorder
+If particular subtree is empty (i.e., node has no left or right descendant) the traversal is
+performed by doing nothing, In other words, a null subtree is considered to be fully traversed
+when it is encountered.
+Inorder: Inorder traversal of a binary tree is defined as follow
+ Traverse the left subtree in Inorder
+ Process the root node
+ Traverse the right subtree in Inorder
+Postorder: Postorder traversal is given by
+ Traverse the left subtree in postorder
+ Traverse the right subtree in postorder
+ Process the root node
+Preorder traversal : A B C D E F G
+Inorder traversal : C B A E F D G
+Postorder traversal : C B F E G D A
+Converse Preorder traversal : A D G E F B C
+Converse Inorder traversal : G D F E A B C
+Converse Postorder traversal : G F E D C B A
+Converse: If we interchange left and right words in the preceding definitions, we obtain three new
+traversal orders which are called Converse Preorder, Converse Inorder and Converse Postorder.
+Example
+Constructing a binary tree from given two of the three
+traversals
+Objective: – Given an inorder and preorder traversal, construct a binary tree from that.
+Input: Inorder and preorder traversals
+Approach:
+int [] inOrder = {2,5,6,10,12,14,15};
+int [] preOrder = {10,5,2,6,14,12,15};
+ First element in preorder[] will be the
+root of the tree, here its 10.
+ Now the search element 10 in inorder[],
+say you find it at position i, once you
+find it, make note of elements which are
+left to i (this will construct the
+leftsubtree) and elements which are
+right to i ( this will construct the
+rightSubtree).
+ See this step above and recursively
+construct left subtree and link it root.left
+and recursively construct right subtree
+and link it root.right.
+Objective: – Given an inorder and postorder traversal, construct a binary tree from that.
+Input: inorder and postorder traversals
+Appraoch:
+int[] inOrder = { 4, 2, 5, 1, 6, 3, 7 };
+int[] postOrder = { 4, 5, 2, 6, 7, 3, 1 };
+ Last element in the postorder [] will be the root of the tree, here it is 1.
+ Now the search element 1 in inorder[], say you find it at position i, once you find it, make note
+of elements which are left to i (this will construct the leftsubtree) and elements which are right
+to i ( this will construct the rightSubtree).
+ Suppose in previous step, there are X number of elements which are left of ‘i’ (which will
+construct the leftsubtree), take first X elements from the postorder[] traversal, this will be the
+post order traversal for elements which are left to i. similarly if there are Y number of elements
+which are right of ‘i’ (which will construct the rightsubtree), take next Y elements, after X
+elements from the postorder[] traversal, this will be the post order traversal for elements which
+are right to i
+ From previous two steps construct the left and right subtree and link it to root.left and root.right
+respectively.
+Objective: – Given a preorder and postorder traversal, construct a binary tree from that.
+Input: preorder and postorder traversals
+Appraoch:
+Note: It is not possible to construct a general Binary Tree from preorder and postorder traversals. But if
+it is known that the tree is strictly binary tree, it is possible to construct the tree without ambiguity.
+Let us understand this with the help of following example.
+For example, Preorder and Postorder traversals are same for the trees given in above diagram.
+Preorder: AB
+Postorder: BA
+Let us consider the example of strictly binary tree.
+int[] preOrder = { 1, 2, 4, 8, 9, 5, 3, 6, 7};
+int[] postOrder = { 8, 9, 4, 5, 2, 6, 7, 3, 1};
+In preOrder, the leftmost element is root of tree. Since the tree is strictly binary tree and array size is
+more than 1. The value next to 1 in preOrder, must be left child of root. So we know 1 is root and 2 is
+left child.
+How to find the all nodes in left subtree? We know 2 is root of all nodes in left subtree. All nodes
+before 2 in postOrder must be in left subtree. Now we know 1 is root, elements {8, 9, 4, 5, 2} are in left
+subtree, and the elements {6, 7, 3} are in right subtree.
+1
+/ \
+/ \
+{8, 9, 4, 5, 2} {6, 7, 3}
+We recursively follow the above approach and get the following tree.
+1
+/ \
+2 3
+/ \ / \
+4 5 6 7
+/ \
+8 9
+Algorithms for Preorder, Postorder and Inorder traversal of
+binary tree
+Preorder
+Procedure : RPREORDER(T)
+Given a binary tree whose root node address is given by pointer variable T and whose node structure is
+same as described below, this procedure traverses the tree in preorder, in a recursive manner.
+1. [Check for empty tree]
+If T= NULL
+Then write (‘EMPTY TREE’)
+Return
+Else write(DATA(T))
+2. [Process the Left Subtree]
+If LPTR(T) ≠ NULL
+Then RPREORDER(LPTR(T))
+3. [Process the Right Subtree]
+If RPTR(T) ≠ NULL
+Then RPREORDER(RPTR(T))
+4. [Finished]
+Return
+Procedure : PREORDER(T)
+Given a binary tree whose root node address is given by pointer variable T and whose node structure is
+same as previously described, this procedure traverses the tree in preorder, in an iterative manner. S
+and TOP denote an auxiliary stack and its associated top index, respectively. The pointer variable P
+denotes the current node in the tree.
+1. [Intialize]
+If T= NULL
+Then write (‘EMPTY TREE’)
+Return
+Else TOP ← 0
+Call PUSH(S,TOP,T)
+2. [Process each stacked branch address]
+Repeat step 3 while TOP > 0
+3. [Get stored address and branch left]
+P ← POP(S, TOP)
+Repeat while P ≠ NULL
+Write (DATA(P))
+If RPTR(P) ≠ NULL
+Then Call PUSH(S,TOP,RPTR(P)) /* store address of nonempty right subtree */
+P ← LPTR(P) /* branch left */
+4. [Finished]
+Return
+Postorder
+Procedure : RPOSTORDER(T)
+Given a binary tree whose root node address is given by pointer variable T and whose node structure is
+same as previously described, this procedure traverses the tree in postorder, in a recursive manner.
+1. [Check for empty tree]
+If T= NULL
+Then write (‘EMPTY TREE’)
+Return
+2. [Process the Left Subtree]
+If LPTR(T) ≠ NULL
+Then RPOSTORDER (LPTR(T))
+3. [Process the Right Subtree]
+If RPTR(T) ≠ NULL
+Then RPOSTORDER (RPTR(T))
+4. [Process the root node]
+Write(DATA(T))
+5. [Finished]
+Return
+Procedure : POSTORDER(T)
+Given a binary tree whose root node address is given by pointer variable T and whose node structure is
+same as previously described, this procedure traverses the tree in postorder, in an iterative manner. S
+and TOP denote an auxiliary stack and its associated top index, respectively. The pointer variable P
+denotes the current node in the tree.
+Here we need two types of stack entries, the first indicating that a left subtree is being traversed, and
+the second that a right subtree is being traversed. For convenience we will use negative pointer values
+to indicate the second type of entry. This, of course, assumes that valid pointer data are always nonzero
+and positive.
+1. [Intialize]
+If T= NULL
+Then write (‘EMPTY TREE’)
+Return
+Else P ← T
+TOP ← 0
+2. [Traverse in postorder]
+Repeat thru step 5 while true
+3. [Descend left]
+Repeat while P ≠ NULL
+Call PUSH(S, TOP, P)
+P ← LPTR(P)
+4. [Process a node whose left and right subtrees have been traversed]
+Repeat while S[TOP] < 0
+P ← POP(S, TOP)
+Write(DATA(P))
+If TOP = 0 (Have all nodes been processed?)
+Then Return
+5. [Branch right and then mark node from which we branched]
+P ← RPTR(S[TOP])
+S[TOP] ← -S[TOP]
+Inorder
+Procedure : RINORDER(T)
+Given a binary tree whose root node address is given by pointer variable T and whose node structure is
+same as previously described, this procedure traverses the tree in inorder, in a recursive manner.
+1. [Check for empty tree]
+If T= NULL
+Then write (‘EMPTY TREE’)
+Return
+2. [Process the Left Subtree]
+If LPTR(T) ≠ NULL
+Then RINORDER (LPTR(T))
+3. [Process the root node]
+Write(DATA(T))
+4. [Process the Right Subtree]
+If RPTR(T) ≠ NULL
+Then RINORDER (RPTR(T))
+5. [Finished]
+Return
+Procedure : INORDER(T)
+Given a binary tree whose root node address is given by pointer variable T and whose node structure is
+same as previously described, this procedure traverses the tree in inorder, in an iterative manner. S and
+TOP denote an auxiliary stack and its associated top index, respectively. The pointer variable P denotes
+the current node in the tree.
+1. [Intialize]
+If T= NULL
+Then write (‘EMPTY TREE’)
+Return
+Else TOP ← 0
+P ← T
+2. [Traverse in inorder]
+Repeat step 3 while TOP > 0 or P ≠ NULL
+3. [Descend left]
+If P ≠ NULL
+Then Call PUSH(S, TOP, P)
+P ← LPTR(P)
+Else
+P ← POP(S, TOP)
+Write (DATA(P))
+P ← RPTR(P)
+4. [Finished]
+Return
+Algorithm to create duplicate copy of a binary tree
+Procedure : COPY(T)
+Given a binary tree whose root node address is given by pointer variable T and whose node structure is
+same as previously described, this procedure generates a copy of the tree and returns the address of its
+root node. NEW is a temporary pointer variable.
+1. [Null Pointer?]
+If T= NULL
+Then Return (NULL)
+2. [Create a new node]
+NEW <= NODE
+3. [Copy information field]
+DATA(NEW) ← DATA(T)
+4. [Set the structural links]
+LPTR(NEW) ← COPY(LPTR(T))
+RPTR(NEW) ← COPY(RPTR(T))
+5. [Return address of new node]
+Return(NEW)
+Threaded Binary Tree
+ In a linked representation of a binary tree, the number of null links (null pointers) are actually more
+than non-null pointers. Consider the following binary tree:
+ In above binary tree, there are 7 null pointers & actual 5 pointers. In all there are 12 pointers.
+ We can generalize it that for any binary tree with n nodes there will be (n+1) null pointers and 2n
+total pointers.
+ The objective here to make effective use of these null pointers.
+ A. J. perils & C. Thornton jointly proposed idea to make effective use of these null pointers.
+ According to this idea we are going to replace all the null pointers by the appropriate pointer values
+called threads.
+ And binary tree with such pointers are called threaded tree.
+ In the memory representation of a threaded binary tree, it is necessary to distinguish between a
+normal pointer and a thread.
+ Therefore we have an alternate node representation for a threaded binary tree which contains five
+fields as show bellow:
+Alternate node structure for a threaded binary tree
+LTHREAD = true (1): Denotes leaf thread link
+LTHREAD = false (0): Denotes leaf structural link
+RTHREAD = true (1): Denotes right threaded link
+RTHREAD = false (0): Denotes right structural link
+ Other method is to use negative address to represent thread.
+ A binary tree is threaded according to particular traversal order. e.g.: Threads for the inorder
+traversals of tree are pointers to its higher nodes, for this traversal order.
+ If left link of node P is null, then this link is replaced by the address of its predecessor.
+ If right link of node P is null, then it is replaced by the address of its successor
+ Head node is simply another node which serves as the predecessor and successor of first and last
+tree nodes. Tree is attached to the left branch of the head node
+Head
+ Also one may choose a one-way threading or a two-way threading.
+ One-way threading: If our threading will correspond to the in order traversal of T, in the one way
+threading of T, a thread will appear in the right field of a node and will point to the successor node
+(right in-threaded) or a thread will appear in the left field of a node and will point to the
+predecessor node (left in-threaded) in the inorder traversal of T.
+Inorder traversal of above tree is: D,B,F,E,A,G,C,L,J,H,K
+ Two-way threading:
+ Here, a thread in the left field points to the predecessor node and a thread in right field
+points to a successor node, in the inorder traversal of tree T.
+ Furthermore, the left pointer of the first node and the right pointer of the last node (in the
+inorder traversal of T) will contain the null value when T does not have a header node.
+Inorder of above tree is: D,B,F,E,A,G,C,L,J,H,K
+ Below figure shows the threaded binary tree T, when T has a head node
+ Examples:
+1. Draw a right in-threaded binary tree for the given tree.
+Right in-threaded binary tree:
+2. Draw a fully in-threaded binary tree for the given tree.
+Fully in-threaded binary tree:
+ Advantages
+ Inorder traversal is faster than unthreaded version as stack is not required.
+ Effectively determines the predecessor and successor for inorder traversal, for unthreaded
+tree this task is more difficult.
+ A stack is required to provide upward pointing information in tree, which threading
+provides.
+ It is possible to generate successor or predecessor of any node without having over head of
+stack with the help of threading.
+ Disadvantages
+ Threaded trees are unable to share common subtrees
+ If negative addressing is not permitted in programming language, two additional fields are
+required.
+ Insertion into and deletion from threaded binary tree are more time consuming because both
+thread and structural link must be maintained.
+Algorithms for In-Threaded Binary Tree
+Procedure: INS(X)
+Given X, the address of a node in a threaded binary tree, this function returns the address of its inorder
+successor. P is a temporary pointer variable.
+1. [Return the right pointer of the given node if a thread]
+P ← |RPTR(X)|
+If RPTR (X) < 0
+Then Return (P)
+2. [Branch left repeatedly until a left thread]
+Repeat while LPTR (P) > 0
+P ← LPTR (P)
+3. [Return address of successor]
+Return (P)
+Procedure: INP(X)
+Given X, the address of a node in a threaded binary tree, this function returns the address of its inorder
+predecessor. P is a temporary pointer variable.
+1. [Return the left pointer of the given node if a thread]
+P ← |LPTR(X)|
+If LPTR (X) < 0
+Then Return (P)
+2. [Branch right repeatedly until a right thread]
+Repeat while RPTR (P) > 0
+P ← RPTR (P)
+3. [Return address of predecessor]
+Return (P)
+Procedure: TINORDER(HEAD)
+Given the address of the list head (HEAD) of a binary tree which has been threaded for inorder
+traversal and sub algorithm INS previously discussed, this procedure traverses the tree in inorder. P is a
+temporary pointer variable.
+1. [Initialize]
+P ← HEAD
+2. [Traverse threaded tree in inorder]
+Repeat while true
+P ← INS (P)
+If P = HEAD
+Then Exit
+Else Write (DATA(P))
+Procedure: LEFT(X, INFO)
+Given the address of a designated node (X) in an inorder threaded binary tree and the information
+associated with a new node (INFO), this procedure inserts a new node to the left of the designated
+node. P is a temporary pointer variable which denotes the address of the node to be inserted.
+1. [Create new node]
+P <= NODE
+DATA(P) ← INFO
+2. [Adjust pointer fields]
+LPTR(P) ← LPTR(X)
+LPTR(X) ← P
+RPTR(P) ← -X
+3. [Reset predecessor thread if required]
+If LPTR(P) > 0
+Then RPTR(INP(P)) ← -P
+Return
+Applications of Binary Tree
+1. Expression Trees
+ Expression tree is a strictly binary tree in which each internal node corresponds to operator and
+each leaf node corresponds to operand
+ Binary trees are widely used to store algebraic expressions. For example, consider the algebraic
+expression given as: Exp = (a – b) + (c * d)
+ This expression can be represented using a binary tree as shown in figure below
+ The Preorder traversal of a binary expression tree yields the prefix form of the expression.
+ The Postorder traversal of a binary expression tree yields the postfix form of the expression.
+ The Inorder traversal of a binary expression tree yields the infix form of the expression with the
+ordering of the operations implied by the structure of the tree, as such tree does not contain
+parenthesis.
+For example, two expression trees given below, when traversed in inorder, generate same
+expression i.e. A + B * C. But the evaluation of each of them is different
+2. Huffman Coding
+Huffman coding is an encoding algorithm developed by David A. Huffman that is widely
+used as a lossless data compression technique. The idea is to assign variable-length codes to input
+characters; lengths of the assigned codes are based on the frequencies of corresponding characters. The
+most frequent character gets the smallest code and the least frequent character gets the largest code.
+The variable-length codes assigned to input characters are Prefix Codes, means the codes (bit
+sequences) are assigned in such a way that the code assigned to one character is not prefix of code
+assigned to any other character. This is how Huffman Coding makes sure that there is no ambiguity
+when decoding the generated bit stream.
+Let us understand prefix codes with a counter example. Let there be four characters a, b, c and d, and
+their corresponding variable length codes be 00, 01, 0 and 1. This coding leads to ambiguity because
+code assigned to c is prefix of codes assigned to a and b. If the compressed bit stream is 0001, the decompressed
+output may be “cccd” or “ccb” or “acd” or “ab”.
+There are mainly two major parts in Huffman Coding
+1) Build a Huffman Tree from input characters.
+2) Traverse the Huffman Tree and assign codes to characters.
+1. Steps to build Huffman Tree (Huffman Algorithm)
+Input is array of unique characters along with their weight or frequency of occurrences and output is
+Huffman Tree.
+1. Create a leaf node for each character. Add the character and its weight or frequency
+of occurrence to the priority queue.
+2. Repeat Steps 3 to 5 while the total number of nodes in the queue is greater than 1.
+3. Remove two nodes that have the lowest weight (or highest priority).
+4. Create a new internal node by merging these two nodes as children and with weight equal to the
+sum of the two nodes' weights.
+5. Add the newly created node to the queue.
+Example: Create a Huffman tree with the following nodes arranged in a priority queue.
+Solution:
+
+2. Steps to print codes from Huffman Tree
+In the Huffman tree, circles contain the cumulative weights or frequency of occurrences of their child
+nodes. Every left branch is coded with 0 and every right branch is coded with 1. So, the characters A,
+E, R, W, X, Y, and Z are coded as shown in Table.
+Huffman Tree Characters with their codes
+Some Properties of a Binary Tree
+1. The maximum number of nodes at level ‘i of a binary tree is 2i.
+2. Maximum number of nodes in a binary tree of height ‘h’ is 2h+1 – 1.
+3. In a Binary Tree with N nodes, minimum possible height is ceiling (Log2(N+1)-1).
+4. A Binary Tree with L leaves has at least ceiling( Log2L ) + 1 levels
+5. In Binary tree where every node has 0 or 2 children, number of leaf nodes is always one more
+than nodes with two children.
+6. Minimum number of nodes in a strictly binary tree is 2h + 1, where h is the height of a tree.
+Binary Search Tree (BST)
+We consider a particular kind of a binary tree called a Binary Search Tree (BST). The basic idea behind
+this data structure is to have such a storing repository that provides the efficient way of data sorting,
+searching and retrieving.
+A BST is a binary tree where nodes are ordered
+in the following way:
+ Each node contains one key (also
+known as data)
+ The keys in the left subtree are less then
+the key in its parent node, in short L <
+P;
+ The keys in the right subtree are greater
+the key in its parent node, in short P <
+R;
+ Duplicate keys are not allowed.
+In the following tree all nodes in the left subtree
+of 10 have keys < 10 while all nodes in the
+right subtree > 10. Because both the left and
+right subtrees of a BST are again search trees;
+the above definition is recursively applied to all
+internal nodes:
+Algorithm to insert a node into BST
+Procedure: BSTINSERT(HEAD, KEY)
+Given a lexically ordered binary tree with the node structure previously described and the information
+value KEY of the node to be inserted, this procedure inserts the node whose information field is equal
+to KEY. PARENT is a pointer variable which denotes the address of the parent of the node to be
+inserted. CURRENT denotes the address of the node in focus. Also, the tree assumed to have a list
+head whose address is given by HEAD.
+1. [Intialize]
+If LPTR(HEAD) = HEAD
+Then NEW <= NODE
+DATA(NEW) ← KEY
+LPTR(HEAD) ← NEW
+Return
+Else CURRENT ← LPTR(HEAD)
+PARENT ← HEAD
+2. [Traverse tree to find Parent node of key]
+Repeat while CURRENT ≠ NULL
+PARENT ← CURRENT
+If KEY < DATA(CURRENT)
+Then CURRENT ← LPTR(CURRENT)
+Else CURRENT ← RPTR(CURRENT)
+3. [Create a node with key]
+If KEY < DATA(PARENT)
+Then LPTR(PARENT) <= NODE
+DATA(LPTR(PARENT)) ← KEY
+Else RPTR(PARENT) <= NODE
+DATA(RPTR(PARENT)) ← KEY
+4. [Finished]
+Return
+Algorithm to delete a node from BST
+Procedure: BSTDELETE(HEAD, KEY)
+Given a lexically ordered binary tree with the node structure previously described and the information
+value KEY of the node marked for deletion, this procedure deletes the node whose information field is
+equal to KEY. PARENT is a pointer variable which denotes the address of the parent of the node
+marked for deletion. CURRENT denotes the address of the node to be deleted. PRED and SUC are
+pointer variables used to find the inorder successor of CURRENT. Q contains the address of the node
+to which either the left or right link of the parent of KEY must be assigned in order to complete the
+deletion. Finally, D contains the direction from the parent node to the node marked for deletion. Also,
+the tree assumed to have a list head whose address is given by HEAD. FOUND is a boolean variable
+which indicates whether the node marked for deletion has been found.
+1. [Intialize]
+If LPTR(HEAD) ≠ HEAD
+Then CURRENT← LPTR(HEAD)
+PARENT ← HEAD
+D ← 'L'
+Else Write ('Node not found')
+Return
+2. [Search for the node marked for deletion]
+FOUND ← false
+Repeat while nor FOUND and CURRENT ≠ NULL
+If DATA(CURRENT) = KEY
+Then FOUND ← true
+Else If KEY < DATA(CURRENT)
+Then PARENT ← CURRENT /* branch left */
+CURRENT ← LPTR(CURRENT)
+D ← 'L'
+Else PARENT ← CURRENT /* branch right */
+CURRENT ← RPTR(CURRENT)
+D ← 'R'
+If FOUND = false
+Then Write ('Node not found')
+Return
+3. [Perform the indicated deletion and restructure the tree]
+If LPTR(CURRENT) = NULL
+Then Q ← RPTR(CURRENT) /* empty left subtree */
+Else If RPTR(CURRENT) = NULL
+Then Q ← LPTR(CURRENT) /* empty right subtree */
+Else (check right child for successor)
+SUC ← RPTR(CURRENT)
+If LPTR(SUC) = NULL
+Then LPTR(SUC) ← LPTR(CURRENT)
+Q ← SUC
+Else (search for successor of CURRENT)
+PRED ← RPTR(CURRENT)
+SUC ← LPTR(PRED)
+Repeat while LPTR(SUC) ≠ NULL
+PRED ← SUC
+SUC ← LPTR(PRED)
+(Connect Successor)
+LPTR(PRED) ← RPTR(SUC)
+LPTR(SUC) ← LPTR(CURRENT)
+RPTR(SUC) ← RPTR(CURRENT)
+Q ← SUC
+(Connect parent of KEY to its replacement)
+If D = 'L'
+Then LPTR(PARENT) ← Q
+Else RPTE(PARENT) ← Q
+Return
+Example:
+Case 1: Deleting a node with no children
+Delete a node with key 15
+Case 2: Deleting a node with one child
+Delete a node with key 5
+Case 3: Deleting a node with both children
+Delete a node with key 11
